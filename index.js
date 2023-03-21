@@ -6,7 +6,6 @@ setInterval(()=>{
     console.log(b);
 },1000)
 
-
 // With the call() method, you can write a method that can be used on different objects. 
 
 const person = {
@@ -44,7 +43,9 @@ console.log(Data());  // Bind  - With the bind() method, an object can borrow a 
 
 function hello(x,y,z){
     for(let i=x ; i<=y ; i++){
-        z.includes(i) ? '' : console.log("data",i)
+        z.includes(i) ? "Hello" : console.log("data",i)
     }
 }
-hello(1,10,[5,6,8])
+hello(1,10,[11])
+
+// 
