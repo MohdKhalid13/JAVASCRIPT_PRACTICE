@@ -1,4 +1,5 @@
 // functions to print largest or smallest number from an array
+
 var arr1 = [1,2,3,4,5,8,6,99,8,44]
 
 var a = arr1.reduce((x,y)=>{
@@ -36,3 +37,27 @@ let num1 = num.filter((x,y)=>{
 })
 
 console.log(num1);
+
+// print first name and last name from array of object
+
+const users = [
+    {
+      first_name: 'Mike',
+      last_name: 'Sheridan'
+    },
+    {
+      first_name: 'Tim',
+      last_name: 'Lee'
+    },
+    {
+      first_name: 'John',
+      last_name: 'Carte'
+    }
+  ];
+
+  let abc = users.map((e)=>{
+    return e.first_name + " " + e.last_name
+  })
+
+  console.log(abc);
+

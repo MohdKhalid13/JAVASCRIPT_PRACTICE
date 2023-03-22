@@ -89,10 +89,66 @@ prom.then((value)=>{
     let data = await fetch(url);
     let x = await data.json();
     let y = x.map((e)=>{
-        return `Name : ${e.name}  Email : ${e.email} '\n' ` 
+        return `Name : ${e.name} , Email : ${e.email}` 
     })
-    let z  = y.toString()
-    console.log(z);
+    console.log(y);
   }
 
   api()
+
+// In JavaScript, closure provides access to the outer scope of a function
+// from inside the inner function, even after the outer function 
+// has closed.
+
+  function greet() {
+
+    // variable defined outside the inner function
+    let name = 'John';
+
+    // inner function
+    function displayName() {
+
+        // accessing name variable
+        return 'Hi' + ' ' + name;
+      
+    }
+
+    return displayName;
+}
+
+const g1 = greet();
+console.log(g1); // returns the function definition
+console.log(g1()); // returns the value
+
+
+// class is an template for objects
+// constructor is used to create the objects
+// super is used to call parent class
+
+class Car{
+    constructor(name,brand){
+        this.name = name,
+        this.brand = brand
+    }
+
+    get(){
+        return `My car name is ${this.name} it's brand is ${this.brand}`
+    }
+}
+
+class Bus extends Car{
+    constructor(name,brand,age){
+        super(name,brand);
+        this.age = age
+    }
+    data(){
+        return `${this.get()} and its age is ${this.age}`
+    }
+
+}
+
+let vehicle = new Car("suv","tata")  // Here we created a new object
+console.log(vehicle.get());
+
+let bus = new Bus("Bus","BEST",60)   // Here we created a new object
+console.log(bus.data());
