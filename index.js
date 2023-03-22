@@ -38,14 +38,3 @@ let Data = person.fullname.bind(person3,"india","mumbai");
 
 console.log(Data());  // Bind  - With the bind() method, an object can borrow a method from another object.
 
-
-// function to exclude a number from particular range
-
-function hello(x,y,z){
-    for(let i=x ; i<=y ; i++){
-        z.includes(i) ? "Hello" : console.log("data",i)
-    }
-}
-hello(1,10,[11])
-
-// 

@@ -83,40 +83,16 @@ prom.then((value)=>{
 // The async keyword is used before the function to make a function return a promise.,
 // The await keyword is used to pause the execution till program resolve/reject the promise. 
 
-async function myDisplay() {
-    let myPromise = new Promise(function(resolve) {
-      setTimeout(function() {resolve("I love You !!");}, 3000);
-    });
-    document.getElementById("demo").innerHTML = await myPromise;
-  }
-
-   const display = async ()  =>{
-
-    let promise = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            let x = 0;
-            if(x == 9){
-                resolve("I love you")
-            }else{
-                reject("I Hate You")
-            }
-        },1000)
-    })
-    let sata = await promise
-    console.log(sata);
-
-  }
-
-  display()
 
   let api = async () => {
     let url = "https://jsonplaceholder.typicode.com/users";
     let data = await fetch(url);
     let x = await data.json();
     let y = x.map((e)=>{
-        return e.name
+        return `Name : ${e.name}  Email : ${e.email} '\n' ` 
     })
-    console.log(y);
+    let z  = y.toString()
+    console.log(z);
   }
 
   api()
